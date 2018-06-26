@@ -44,5 +44,9 @@ extension ViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return grohongView
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        minimap.resize(scrollView: scrollView)
+    }
 }
 

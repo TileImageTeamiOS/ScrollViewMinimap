@@ -9,8 +9,8 @@
 import UIKit
 
 class ScrollViewMinimap: UIView {
-    private var focusedBorderWidth: CGFloat = 2.0
-    private var focusedBorderColor: CGColor = UIColor.red.cgColor
+    public var focusedBorderWidth: CGFloat = 2.0
+    public var focusedBorderColor: CGColor = UIColor.red.cgColor
 
     private var focusedBoxView: UIView = UIView()
     private var minimapImageView: UIImageView = UIImageView()
@@ -44,6 +44,17 @@ class ScrollViewMinimap: UIView {
             self.addSubview(self.minimapImageView)
             self.addSubview(self.focusedBoxView)
         }
+    }
+    
+    public func resize(scrollView: UIScrollView) {
+        let zoomScale = scrollView.zoomScale
+        let width = scrollView.frame.width / downSizeRatio
+        let height = scrollView.frame.height / downSizeRatio
+        let newX = scrollView.contentOffset.x / downSizeRatio / zoomScale
+        let newY = scrollView.contentOffset.y / downSizeRatio / zoomScale
+        let newWidth = width / zoomScale
+        let newHeight = height / zoomScale
+        focusedBoxView.frame = CGRect(x: newX, y: newY, width: newWidth, height: newHeight)
     }
 }
 
