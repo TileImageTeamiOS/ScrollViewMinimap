@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +34,6 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="grohong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-a7-LIa">
                                                 <rect key="frame" x="155" y="386" width="65" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="65" id="3jy-JW-W6a"/>
                                                     <constraint firstAttribute="height" constant="21" id="rNM-Q2-n74"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -68,7 +68,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yoJ-i1-5sX" firstAttribute="top" secondItem="KHT-k1-uPj" secondAttribute="bottom" constant="8" id="54A-ir-KnA"/>
                             <constraint firstAttribute="trailing" secondItem="KHT-k1-uPj" secondAttribute="trailing" id="Bkx-WA-JTY"/>
@@ -77,6 +76,7 @@
                             <constraint firstAttribute="trailing" secondItem="yoJ-i1-5sX" secondAttribute="trailing" constant="31" id="dRy-fb-O9f"/>
                             <constraint firstAttribute="bottom" secondItem="KHT-k1-uPj" secondAttribute="bottom" constant="150" id="tm1-X6-Q3f"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="P2N-qa-pwa"/>
                     </view>
                     <connections>
                         <outlet property="grohongView" destination="w3m-32-qIH" id="SZM-fq-uek"/>
