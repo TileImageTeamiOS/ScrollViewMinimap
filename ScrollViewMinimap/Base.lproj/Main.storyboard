@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,30 +13,42 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewMinimap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHT-k1-uPj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="497"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-32-qIH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="497"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bench.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nT4-DB-Deb">
-                                                <rect key="frame" x="53" y="37" width="269" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bench.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nT4-DB-Deb">
+                                                <rect key="frame" x="53" y="158.5" width="269" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="269" id="9vX-02-sa0"/>
+                                                    <constraint firstAttribute="height" constant="200" id="RtV-UW-55s"/>
+                                                </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="grohong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-a7-LIa">
+                                                <rect key="frame" x="155" y="386" width="65" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="3jy-JW-W6a"/>
+                                                    <constraint firstAttribute="height" constant="21" id="rNM-Q2-n74"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="nT4-DB-Deb" firstAttribute="centerX" secondItem="w3m-32-qIH" secondAttribute="centerX" id="A3a-ZG-EOZ"/>
+                                            <constraint firstItem="TS8-a7-LIa" firstAttribute="centerX" secondItem="w3m-32-qIH" secondAttribute="centerX" id="Sfj-o7-tEa"/>
+                                            <constraint firstItem="TS8-a7-LIa" firstAttribute="top" secondItem="nT4-DB-Deb" secondAttribute="bottom" constant="27.5" id="fMp-wj-gIu"/>
+                                            <constraint firstItem="nT4-DB-Deb" firstAttribute="centerY" secondItem="w3m-32-qIH" secondAttribute="centerY" id="nTQ-gO-8TX"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="grohong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-a7-LIa">
-                                        <rect key="frame" x="155" y="300" width="65" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="w3m-32-qIH" firstAttribute="top" secondItem="KHT-k1-uPj" secondAttribute="top" id="DlO-8N-5zc"/>
@@ -48,16 +59,30 @@
                                     <constraint firstItem="w3m-32-qIH" firstAttribute="leading" secondItem="KHT-k1-uPj" secondAttribute="leading" id="imX-4R-Fx3"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoJ-i1-5sX" customClass="ScrollViewMinimap" customModule="ScrollViewMinimap" customModuleProvider="target">
+                                <rect key="frame" x="264" y="525" width="80" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ebw-lo-m5f"/>
+                                    <constraint firstAttribute="width" constant="80" id="is4-nn-EwC"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KHT-k1-uPj" secondAttribute="trailing" id="Bkx-WA-JTY"/>
-                            <constraint firstItem="KHT-k1-uPj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O8c-Q4-FIx"/>
-                            <constraint firstItem="KHT-k1-uPj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="X9r-9s-qre"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KHT-k1-uPj" secondAttribute="bottom" constant="150" id="tm1-X6-Q3f"/>
+                            <constraint firstItem="yoJ-i1-5sX" firstAttribute="top" secondItem="KHT-k1-uPj" secondAttribute="bottom" constant="8" id="54A-ir-KnA"/>
+                            <constraint firstAttribute="trailing" secondItem="KHT-k1-uPj" secondAttribute="trailing" id="Bkx-WA-JTY"/>
+                            <constraint firstItem="KHT-k1-uPj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O8c-Q4-FIx"/>
+                            <constraint firstItem="KHT-k1-uPj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X9r-9s-qre"/>
+                            <constraint firstAttribute="trailing" secondItem="yoJ-i1-5sX" secondAttribute="trailing" constant="31" id="dRy-fb-O9f"/>
+                            <constraint firstAttribute="bottom" secondItem="KHT-k1-uPj" secondAttribute="bottom" constant="150" id="tm1-X6-Q3f"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="grohongView" destination="w3m-32-qIH" id="SZM-fq-uek"/>
+                        <outlet property="minimap" destination="yoJ-i1-5sX" id="PsL-sd-6TB"/>
+                        <outlet property="scrollView" destination="KHT-k1-uPj" id="XX8-EE-ds7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
